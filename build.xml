@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="run" name="SWTClasForBuildTest">
+
+	<description>
+			Ant-Skript für SWT Buildmanagement
+	</description>
+	
+	<echo>Start</echo>
+	
+	<target name="prepare" description="Vorbereitungen ausführen">
+		<mkdir dir="statting" />
+	</target>
+	
+	
+	<target name="compile" depends="prepare" description="Kompiliert die Java-Sourcen"> 
+		<javac includeantruntime="false"  srcdir="./src" destdir="statting"></javac>
+		</target>
+	
+	
+	
+	<target name="run" depends="compile" description="Programm starten."> 
+		<java classname="HelloWorld.SWTClasForBuildTest" fork="true">
+			<classpath path="statting"></classpath>
+		</java>
+		</target>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<echo>Fine</echo>
+
+</project> 
